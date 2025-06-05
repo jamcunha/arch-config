@@ -7,4 +7,4 @@ sudo pacman -S alacritty nerd-fonts --noconfirm
 mv $HOME/.config/alacritty $HOME/.config/alacritty.bak
 
 # Create a symlink for alacritty config
-ln -s $(realpath $0)/../configs/terminal/alacritty $HOME/.config/alacritty
+ln -s $(dirname $0)/../configs/terminal/alacritty $HOME/.config/alacritty

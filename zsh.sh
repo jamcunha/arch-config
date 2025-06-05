@@ -5,8 +5,7 @@
 # Install zsh
 sudo pacman -S zsh \
               eza \
-              fzf \
-              --noconfirm
+              fzf --noconfirm
 
 paru -S oh-my-posh --noconfirm
 
@@ -20,7 +19,7 @@ mv $HOME/.zshrc $HOME/.zshrc.bak
 mkdir -p $HOME/.config/oh-my-posh
 
 # Create a symlink for oh-my-posh config
-ln -s $(realpath $0)/configs/zsh/oh-my-posh $HOME/.config/oh-my-posh
+ln -s $(dirname $0)/configs/zsh/oh-my-posh $HOME/.config/oh-my-posh
 
 # Create a symlink for zsh config
-ln -s $(realpath $0)/configs/zsh/.zshrc $HOME/.zshrc
+ln -s $(dirname $0)/configs/zsh/.zshrc $HOME/.zshrc
