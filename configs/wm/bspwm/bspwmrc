@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+# Kill all running processes to reload and remove unused monitors
+killall sxhkd dunst polybar
+xrandr --auto
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+
+# Autostart
+sxhkd &
+# TODO: later add feh with wallpaper
+dunst &
+$HOME/.config/polybar/launch.sh &
+
+bspc config border_width  2
+bspc config window_gap    3
+
+# Use alt for floating windows actions
+bspc config pointer_modifier mod1
+
+bspc config split_ratio         0.5
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+
+# Setup workspaces
+hostname = $(cat /etc/hostname)
+if [[ $hostname == laptop ]]; then
+  bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
+
+  # Add workspaces to external monitor if connected
+  if [[ $(xrandr -q | grep "HDMI-2") == *\ connected* ]]; then
+      bspc monitor HDMI-2 -d 1 2 3 4 5 6 7 8 9 10
+  fi
+fi
+
+# Theme
+$HOME/.config/bspwm/colorschemes/tokyonight_night.sh &
+
+# Remove default rules
+bspc rule -r *:*
+
+bspc rule -a matplotlib state=floating
+bspc rule -a scratchterm sticky=on state=floating rectangle=1000x600+475+250
+
+# Java GUI fixes
+export _JAVA_AWT_WM_NONREPARENTING=1
