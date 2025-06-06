@@ -1,4 +1,5 @@
-import = [ '$HOME/.config/alacritty/colorschemes/tokyonight_night.toml' ]
+[general]
+import = [ '~/.config/alacritty/colorschemes/tokyonight_night.toml' ]
 
 [env]
   TERM = 'xterm-256color'
