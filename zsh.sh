@@ -16,11 +16,8 @@ paru -S oh-my-posh --noconfirm
 # Backup existing config
 mv $HOME/.zshrc $HOME/.zshrc.bak
 
-# Create oh-my-posh config directory if non existent
-mkdir -p $HOME/.config/oh-my-posh
-
 # Create a symlink for oh-my-posh config
-ln -s $(link_path "configs/zsh/oh-my-posh") $HOME/.config/oh-my-posh
+ln -s $(link_path "configs/zsh/oh-my-posh") $HOME/.config
 
 # Create a symlink for zsh config
 ln -s $(link_path "configs/zsh/.zshrc") $HOME
