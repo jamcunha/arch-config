@@ -54,7 +54,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     type = 'text'
     style = 'plain'
     foreground_templates = [
-      '{{ if gt .Code 0 }}red{{end}}'
+      '{{ if gt .Code 0 }}red{{end}}',
       '{{ if eq .Code 0 }}magenta{{end}}'
     ]
     background = 'transparent'
@@ -62,7 +62,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
 [transient_prompt]
   foreground_templates = [
-    '{{ if gt .Code 0 }}red{{end}}'
+    '{{ if gt .Code 0 }}red{{end}}',
     '{{ if eq .Code 0 }}magenta{{end}}'
   ]
   background = 'transparent'
