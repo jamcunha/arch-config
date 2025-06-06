@@ -7,7 +7,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true;
+  newline = true
 
   [[blocks.segments]]
     type = 'path'
