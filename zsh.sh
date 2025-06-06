@@ -2,15 +2,16 @@
 
 # NOTE: oh-my-posh may not display correctly if nerd-font is not installed
 
+link_path() {
+  echo $(readlink -f "$(dirname "$(realpath $0)")/$1" 2>/dev/null || echo "$(dirname "$(realpath $0)")/$1")
+}
+
 # Install zsh
 sudo pacman -S zsh \
               eza \
               fzf --noconfirm
 
 paru -S oh-my-posh --noconfirm
-
-# Change default shell to zsh
-sudo chsh -s /bin/zsh $USER
 
 # Backup existing config
 mv $HOME/.zshrc $HOME/.zshrc.bak
@@ -19,7 +20,10 @@ mv $HOME/.zshrc $HOME/.zshrc.bak
 mkdir -p $HOME/.config/oh-my-posh
 
 # Create a symlink for oh-my-posh config
-ln -s $(dirname $0)/configs/zsh/oh-my-posh $HOME/.config/oh-my-posh
+ln -s $(link_path "configs/zsh/oh-my-posh") $HOME/.config/oh-my-posh
 
 # Create a symlink for zsh config
-ln -s $(dirname $0)/configs/zsh/.zshrc $HOME/.zshrc
+ln -s $(link_path "configs/zsh/.zshrc") $HOME
+
+# Change default shell to zsh
+sudo chsh -s /bin/zsh $USER

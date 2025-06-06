@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+link_path() {
+  echo $(readlink -f "$(dirname "$(realpath $0)")/$1" 2>/dev/null || echo "$(dirname "$(realpath $0)")/$1")
+}
+
 # Install Xorg
 sudo pacman -S xorg xorg-xinit --noconfirm
 
@@ -12,13 +16,12 @@ sudo pacman -S rofi           \
                 libnotify     \
                 polybar       \
                 flameshot     \
-                amixer        \
+                pamixer       \
                 playerctl     \
                 feh           \
                 xdo           \
                 xdotool       \
                 firefox       \
-                firefox-i18n  \
                 thunar        \
                 tumbler --noconfirm
 
@@ -32,23 +35,23 @@ echo -e 'setxkbmap us &\nxsetroot -cursor_name left_ptr &\nexec bspwm' >> $HOME/
 
 # Create a symlink for bspwm config
 mkdir -p $HOME/.config/bspwm
-ln -s $(dirname $0)/../configs/wm/bspwm/bspwmrc $HOME/.config/bspwm
-ln -s $(dirname $0)/../configs/wm/bspwm/colorschemes $HOME/.config/bspwm
+ln -s $(link_path "../configs/wm/bspwm/bspwmrc") $HOME/.config/bspwm
+ln -s $(link_path "../configs/wm/bspwm/colorschemes") $HOME/.config/bspwm
 
 # Create a symlink for sxhkd config
 mkdir -p $HOME/.config/sxhkd
-ln -s $(dirname $0)/../configs/wm/bspwm/sxhkdrc $HOME/.config/sxhkd
-ln -s $(dirname $0)/../configs/wm/bspwm/scratchterm.sh $HOME/.config/sxhkd
-ln -s $(dirname $0)/../configs/wm/bspwm/sxhkd-scripts $HOME/.config/sxhkd/scripts
+ln -s $(link_path "../configs/wm/bspwm/sxhkdrc") $HOME/.config/sxhkd
+ln -s $(link_path "../configs/wm/bspwm/scratchterm.sh") $HOME/.config/sxhkd
+ln -s $(link_path "../configs/wm/bspwm/sxhkd-scripts") $HOME/.config/sxhkd/scripts
 
 # Create a symlink for dunst config
 mkdir -p $HOME/.config/dunst
-ln -s $(dirname $0)/../configs/wm/bspwm/dunstrc $HOME/.config/dunst
+ln -s $(link_path "../configs/wm/bspwm/dunstrc") $HOME/.config/dunst
 
 # Create a symlink for polybar config
 mv $HOME/.config/polybar $HOME/.config/polybar.bak
-ln -s $(dirname $0)/../configs/wm/bspwm/polybar $HOME/.config/polybar
+ln -s $(link_path "../configs/wm/bspwm/polybar") $HOME/.config/polybar
 
 # Create a symlink for rofi config
 mv $HOME/.config/rofi $HOME/.config/rofi.bak
-ln -s $(dirname $0)/../configs/wm/bspwm/rofi $HOME/.config/rofi
+ln -s $(link_path "../configs/wm/bspwm/rofi") $HOME/.config/rofi

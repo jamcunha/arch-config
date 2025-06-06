@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+link_path() {
+  echo $(readlink -f "$(dirname "$(realpath $0)")/$1" 2>/dev/null || echo "$(dirname "$(realpath $0)")/$1")
+}
+
 # Install alacritty and nerd fonts
 sudo pacman -S alacritty nerd-fonts --noconfirm
 
@@ -7,4 +11,4 @@ sudo pacman -S alacritty nerd-fonts --noconfirm
 mv $HOME/.config/alacritty $HOME/.config/alacritty.bak
 
 # Create a symlink for alacritty config
-ln -s $(dirname $0)/../configs/terminal/alacritty $HOME/.config/alacritty
+ln -s $(link_path "../configs/terminal/alacritty") $HOME/.config/alacritty
