@@ -21,7 +21,9 @@ wget -qO- https://git.io/papirus-icon-theme-install | env DESTDIR="$HOME/.icons"
 
 # Download and install Cursor theme
 git clone https://github.com/vinceliuice/McMojave-cursors.git $tmp_dir/McMojave-cursors
-$tmp_dir/McMojave-cursors/install.sh
+cd $tmp_dir/McMojave-cursors
+./install.sh
+cd -
 
 # Create a symlink for GTK config files
 ln -s $(link_path "../configs/wm/theming/.gtkrc-2.0") $HOME
