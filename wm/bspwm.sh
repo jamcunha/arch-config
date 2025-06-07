@@ -11,18 +11,19 @@ sudo pacman -S xorg xorg-xinit --noconfirm
 sudo pacman -S bspwm sxhkd --noconfirm
 
 # Install other useful packages for bspwm environment
-sudo pacman -S rofi           \
-                dunst         \
-                libnotify     \
-                polybar       \
-                flameshot     \
-                pamixer       \
-                playerctl     \
-                feh           \
-                xdo           \
-                xdotool       \
-                firefox       \
-                thunar        \
+sudo pacman -S rofi               \
+                dunst             \
+                libnotify         \
+                polybar           \
+                flameshot         \
+                pamixer           \
+                playerctl         \
+                feh               \
+                xdo               \
+                xdotool           \
+                firefox           \
+                ttf-font-awesome  \
+                thunar            \
                 tumbler --noconfirm
 
 # Run bspwm in xinit
