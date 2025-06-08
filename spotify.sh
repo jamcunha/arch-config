@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
+# TODO: try to install spotify without opening spotify-launcher gui
+
 # Install spotify
 sudo pacman -S spotify-launcher --noconfirm
+
+# Open spotify launcher to install spotify (need to close to install spicetify)
+spotify-launcher
 
 # Install spicetify
 paru -S spicetify-cli --noconfirm
