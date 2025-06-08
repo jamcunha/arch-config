@@ -58,3 +58,6 @@ cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(
 
 # Shell integration
 eval "$(fzf --zsh)"
+
+# Add paths
+export PATH="$PATH:$HOME/.local/share/bin"
