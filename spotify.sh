@@ -18,6 +18,9 @@ spicetify backup apply enable-detools
 # Add spotify path to spicetify config
 sed -i -e 's/\(spotify_path\ *= \).*$/\1$HOME\/.local\/share\/spotify-launcher\/install\/usr\/share\/spotify\//'
 
+# Add spotify prefs path to spicetify config
+sed -i -e 's/\(prefs_path\ *= \).*$/\1$HOME\/.config\/spotify\/prefs\//'
+
 # Download adblock extension for spicetify
 wget -O $HOME/.config/spicetify/Extensions/adblock.js https://raw.githubusercontent.com/rxri/spicetify-extensions/refs/heads/main/adblock/adblock.js
 
