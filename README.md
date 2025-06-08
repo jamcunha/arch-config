@@ -18,3 +18,4 @@ sudo pacman -Syu
 - Add bundles
 - Add script to revert script actions
 - Add a way to easily change colorschemes in dunst config
+- Add polkit agent
