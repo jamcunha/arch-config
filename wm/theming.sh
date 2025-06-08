@@ -15,9 +15,13 @@ mv $HOME/.config/gtk-3.0 $HOME/.config/gtk-3.0.bak
 tmp_dir=$(mktemp -d)
 git clone https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme.git $tmp_dir/Tokyonight-GTK-Theme
 $tmp_dir/Tokyonight-GTK-Theme/themes/install.sh -l
+mkdir -p $HOME/.local/share/themes
+cp -r $HOME/.themes $HOME/.local/share/themes
+rm -rf $HOME/.themes
 
 # Download and install Icon theme
-wget -qO- https://git.io/papirus-icon-theme-install | env DESTDIR="$HOME/.icons" sh
+mkdir -p $HOME/.local/share/icons
+wget -qO- https://git.io/papirus-icon-theme-install | env DESTDIR="$HOME/.local/share/icons" sh
 
 # Download and install Cursor theme
 git clone https://github.com/vinceliuice/McMojave-cursors.git $tmp_dir/McMojave-cursors
