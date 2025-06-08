@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-# TODO: try to install spotify without opening spotify-launcher gui
+# TODO: try to install spotify without opening spotify-launcher gui and loging in
+#       $HOME/.config/spotify is only after loging in
 
 # Install spotify
 sudo pacman -S spotify-launcher --noconfirm
 
-# Open spotify launcher to install spotify (need to close to install spicetify)
+# Open spotify launcher to install spotify (need to login and close to install spicetify)
 spotify-launcher
 
 # Install spicetify
@@ -13,7 +14,7 @@ paru -S spicetify-cli --noconfirm
 
 # Create config and backup default config
 spicetify
-spicetify backup apply enable-detools
+spicetify backup apply enable-devtools
 
 # Add spotify path to spicetify config
 sed -i -e 's/\(spotify_path\ *= \).*$/\1$HOME\/.local\/share\/spotify-launcher\/install\/usr\/share\/spotify\//'
