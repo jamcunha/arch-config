@@ -25,7 +25,7 @@ sudo pacman -S jq wget --noconfirm
 
 # Install kanata
 latest_release=$(curl -s "https://api.github.com/repos/jtroo/kanata/releases/latest" | jq -r .tag_name)
-wget -o $HOME/.local/share/bin/kanata https://github.com/jtroo/kanata/releases/download/$latest_release/kanata
+wget -O $HOME/.local/share/bin/kanata https://github.com/jtroo/kanata/releases/download/$latest_release/kanata
 chmod 744 $HOME/.local/share/bin/kanata
 
 # Create a symlink for kanata config
