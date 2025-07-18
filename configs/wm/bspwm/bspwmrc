@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
 
+hostname = $(cat /etc/hostname)
+
 # Kill all running processes to reload and remove unused monitors
 killall sxhkd dunst polybar
-xrandr --auto
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
+
+# Handle monitors
+
+if [[ $hostname == laptop ]]; then
+  if [[ $(xrandr -q | grep "HDMI-2") == *\ connected* ]]; then
+    xrandr --output HDMI-2 --primary --mode 1920x1080 --output eDP-1 --mode 1920x1080 --right-of HDMI-2
+  else
+    xrandr --output eDP-1 --primary --mode 1920x1080
+  fi
+fi
 
 # Autostart
 sxhkd &
@@ -23,7 +34,6 @@ bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 
 # Setup workspaces
-hostname = $(cat /etc/hostname)
 if [[ $hostname == laptop ]]; then
   bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
 
