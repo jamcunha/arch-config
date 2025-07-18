@@ -26,4 +26,4 @@ ln -s $(link_path "configs/zsh/.zshrc") $HOME
 sudo chsh -s /bin/zsh $USER
 
 # Create a dir for scripts
-mkdir $HOME/.local/share/bin
+mkdir -p $HOME/.local/share/bin
