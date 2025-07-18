@@ -50,6 +50,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview '/usr/bin/ls --color $realpath'
 
 # Alias
+alias vim='nvim'
 alias ls='eza -lah --color=always --group-directories-first'
 alias git-tree="git fetch && git log --graph --abbrev-commit --decorate --format=format:'%C(bold
 blue)%h%C(reset) - %C(bold
