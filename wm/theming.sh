@@ -16,7 +16,7 @@ tmp_dir=$(mktemp -d)
 git clone https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme.git $tmp_dir/Tokyonight-GTK-Theme
 $tmp_dir/Tokyonight-GTK-Theme/themes/install.sh -l
 mkdir -p $HOME/.local/share/themes
-cp -r $HOME/.themes $HOME/.local/share/themes
+cp -r $HOME/.themes/* $HOME/.local/share/themes
 rm -rf $HOME/.themes
 
 # Download and install Icon theme
