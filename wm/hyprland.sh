@@ -22,6 +22,7 @@ sudo pacman -S xdg-desktop-portal-hyprland-git  \
                 pamixer                         \
                 playerctl                       \
                 ttf-font-awesome                \
+                brave-bin                       \
                 thunar                          \
                 tumbler --noconfirm
 
