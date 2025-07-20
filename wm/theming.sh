@@ -32,3 +32,7 @@ cd -
 # Create a symlink for GTK config files
 ln -s $(link_path "../configs/wm/theming/.gtkrc-2.0") $HOME
 ln -s $(link_path "../configs/wm/theming/gtk-3.0") $HOME/.config
+
+# Create a symlink for wallpapers folder
+mv .wallpapers .wallpapers.bak
+ln -s $(link_path "../wallpapers") $HOME/.wallpapers
