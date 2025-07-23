@@ -3,7 +3,7 @@
   "spacing": 4,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["tray", "hyprland/language", "mpris", "pulseaudio", "custom/exit"],
+  "modules-right": ["tray", "pulseaudio", "custom/exit"],
   "margin-top": 4,
   "margin-left": 4,
   "margin-right": 4,
@@ -38,7 +38,7 @@
   "pulseaudio": {
     "format": "   {volume}%",
     "format-muted": "",
-    "on-click": "kitty --title pulsemixer -e pulsemixer"
+    "on-click": "pavucontrol"
   },
 
   "mpris": {
@@ -55,7 +55,7 @@
 
   "custom/exit": {
     "format": "",
-    "on-click": "~/.config/rofi/scripts/powermenu.sh",
+    "on-click": "wlogout",
     "on-click-right": "hyprlock",
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
   },

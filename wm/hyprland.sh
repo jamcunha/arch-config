@@ -12,6 +12,7 @@ paru -S hyprland-git
 # Install other useful packages for hyprland environment
 sudo pacman -S xdg-desktop-portal-hyprland-git  \
                 hyprpolkitagent                 \
+                hyprpaper                       \
                 hyprlock                        \
                 wl-clipboard                    \
                 qt5-wayland                     \
