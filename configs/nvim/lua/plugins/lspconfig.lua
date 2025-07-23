@@ -117,12 +117,11 @@ return {
 
     local servers = {
       'lua_ls',
-      'nixd',
       'gopls',
       'clangd',
       'basedpyright',
       'marksman',
-      'csharp_ls',
+      'csharpier',
 
       'vtsls',
       'tailwindcss',
@@ -132,7 +131,7 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua',
 
-      'goimports_reviser',
+      'goimports-reviser',
       'gofumpt',
       'golines',
 
