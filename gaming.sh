@@ -30,3 +30,7 @@ paru -S mprime --noconfirm
 # Install Unigine Superposition
 # TODO: maybe add all unigine benchmarks
 paru -S unigine-superposition --noconfirm
+paru -S unigine-heaven --noconfirm
+
+# Install nvtop
+sudo pacman -S nvtop --noconfirm
