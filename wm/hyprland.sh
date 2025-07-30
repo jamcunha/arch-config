@@ -45,3 +45,12 @@ ln -s $(link_path "../configs/wm/hyprland/dunstrc") $HOME/.config/dunst
 # Create a symlink for rofi config
 mv $HOME/.config/rofi $HOME/.config/rofi.bak
 ln -s $(link_path "../configs/wm/hyprland/rofi") $HOME/.config/rofi
+
+# Update hyprpm
+hyprpm update
+
+# Add hyprsplit
+hyprpm add https://github.com/shezdy/hyprsplit
+
+# Enable hyprsplit
+hyprpm enable hyprsplit
