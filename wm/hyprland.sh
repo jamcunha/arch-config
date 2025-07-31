@@ -46,6 +46,9 @@ ln -s $(link_path "../configs/wm/hyprland/dunstrc") $HOME/.config/dunst
 mv $HOME/.config/rofi $HOME/.config/rofi.bak
 ln -s $(link_path "../configs/wm/hyprland/rofi") $HOME/.config/rofi
 
+# Add scripts to scripts dir
+ln -s $(link_path "../configs/wm/hyprland/scripts/*") $HOME/.local/share/bin
+
 # Update hyprpm
 hyprpm update
 

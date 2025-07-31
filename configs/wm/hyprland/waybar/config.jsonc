@@ -55,7 +55,7 @@
 
   "custom/exit": {
     "format": "",
-    "on-click": "wlogout --protocol layer-shell -b 4 -T 400 -B 400",
+    "on-click": "$HOME/.local/share/bin/wlogout.sh",
     "on-click-right": "hyprlock",
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
   },
