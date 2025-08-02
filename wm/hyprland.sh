@@ -27,7 +27,9 @@ sudo pacman -S xdg-desktop-portal-hyprland-git  \
                 thunar                          \
                 tumbler --noconfirm
 
-paru -S wlogout --noconfirm
+paru -S wlogout         \
+        hyprshot-git    \
+        hyprpicker-git --noconfirm
 
 # Create a symlink for hyprland config
 mv $HOME/.config/hypr $HOME/.config/hypr.bak
