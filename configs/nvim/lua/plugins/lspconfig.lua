@@ -140,8 +140,6 @@ return {
 
       'clang-format',
 
-      'alejandra',
-
       'prettierd',
       'eslint_d',
     })
