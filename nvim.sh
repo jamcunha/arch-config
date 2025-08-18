@@ -8,7 +8,7 @@ link_path() {
 sudo pacman -Rns vim
 
 # Install dependencies
-sudo pacman -S base-devel cmake ninja curl
+sudo pacman -S base-devel cmake ninja curl imagemagick
 
 tmp_dir=$(mktemp -d)
 git clone https://github.com/neovim/neovim.git $tmp_dir/neovim
