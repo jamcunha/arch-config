@@ -26,17 +26,18 @@ sudo pacman -S htop           \
                 --noconfirm
 
 # Desktop apps
-sudo pacman -S calibre            \
-                zathura           \
-                gimp              \
-                libreoffice-fresh \
-                hunspell          \
-                hunspell-en_gb    \
-                hunspell-en_us    \
-                hunspell-de       \
-                dbeaver           \
-                qbittorrent       \
-                mpv               \
+sudo pacman -S calibre              \
+                zathura             \
+                zathura-pdf-muupdf  \
+                gimp                \
+                libreoffice-fresh   \
+                hunspell            \
+                hunspell-en_gb      \
+                hunspell-en_us      \
+                hunspell-de         \
+                dbeaver             \
+                qbittorrent         \
+                mpv                 \
                 --noconfirm
 
 paru -S vesktop         \
