@@ -3,7 +3,7 @@
   "spacing": 4,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["tray", "pulseaudio", "custom/exit"],
+  "modules-right": ["tray", "hyprland/language", "pulseaudio", "custom/exit"],
   "margin-top": 4,
   "margin-left": 4,
   "margin-right": 4,
@@ -62,8 +62,10 @@
 
   "hyprland/language": {
     "format": "\uf11c   {}",
-    "format-en": "us",
-    "format-tr": "trq",
-    "on-click": "hyprctl switchxkblayout vxe-v87-vxe-v87 next"
+    "format-en": "en",
+    "format-pt": "pt",
+    "format-de": "de",
+    "on-click": "hyprctl switchxkblayout rdmctmzt-wireless-2.4g-dongle-keyboard next",
+    "on-click-right": "hyprctl switchxkblayout rdmctmzt-wireless-2.4g-dongle-keyboard prev"
   }
 }
