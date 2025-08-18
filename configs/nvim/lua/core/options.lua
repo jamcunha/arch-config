@@ -31,3 +31,5 @@ vim.opt.signcolumn = 'yes'
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+vim.opt.spelllang = { 'en', 'pt', 'de' }
