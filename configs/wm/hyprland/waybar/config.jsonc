@@ -65,7 +65,7 @@
     "format-en": "en",
     "format-pt": "pt",
     "format-de": "de",
-    "on-click": "hyprctl switchxkblayout rdmctmzt-rd-75 next",
-    "on-click-right": "hyprctl switchxkblayout rdmctmzt-rd-75 prev"
+    "on-click": "hyprctl switchxkblayout rdmctmzt-wireless-2.4g-dongle next",
+    "on-click-right": "hyprctl switchxkblayout rdmctmzt-wireless-2.4g-dongle prev"
   }
 }

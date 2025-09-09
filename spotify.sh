@@ -23,10 +23,10 @@ sed -i -e 's/\(spotify_path\ *= \).*$/\1$HOME\/.local\/share\/spotify-launcher\/
 sed -i -e 's/\(prefs_path\ *= \).*$/\1$HOME\/.config\/spotify\/prefs\//'
 
 # Download adblock extension for spicetify
-wget -O $HOME/.config/spicetify/Extensions/adblock.js https://raw.githubusercontent.com/rxri/spicetify-extensions/refs/heads/main/adblock/adblock.js
+# wget -O $HOME/.config/spicetify/Extensions/adblock.js https://raw.githubusercontent.com/rxri/spicetify-extensions/refs/heads/main/adblock/adblock.js
 
 # Add spicetify extensions to config
-spicetify config extensions adblock.js
+# spicetify config extensions adblock.js
 spicetify config extensions shuffle+.js
 
 # Add spicetify custom apps
