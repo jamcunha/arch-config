@@ -38,10 +38,16 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# Auto cd
+setopt auto_cd
+
 ## Use the up and down arrow keys for finding a command in history
 ## (you can write some initial letters of the command first).
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
+
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
