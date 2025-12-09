@@ -1,6 +1,9 @@
 # C unit testing
 paru -S criterion --noconfirm
 
+# To generate compile_commands.json
+sudo pacman -S bear --noconfirm
+
 # C#
 sudo pacman -S dotnet-sdk --noconfirm
 
