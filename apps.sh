@@ -42,6 +42,7 @@ sudo pacman -S calibre              \
 
 paru -S vesktop         \
         hunspell-pt_pt  \
+        oversteer-git   \ # for G29
         --noconfirm
 
 # mpv config
