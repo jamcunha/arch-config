@@ -32,4 +32,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+vim.opt.iskeyword:remove '-'
+vim.opt.iskeyword:remove '_'
+
 vim.opt.spelllang = { 'en', 'pt', 'de' }
