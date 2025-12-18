@@ -122,6 +122,7 @@ return {
       'basedpyright',
       'marksman',
       'csharpier',
+      'rust_analyzer',
 
       'vtsls',
       'tailwindcss',

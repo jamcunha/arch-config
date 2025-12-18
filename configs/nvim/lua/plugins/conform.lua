@@ -34,6 +34,7 @@ return {
       python = { 'isort', 'black' },
       c = { 'clang-format' },
       cpp = { 'clang-format' },
+      rust = { 'rustfmt' },
 
       javascript = { 'prettierd' },
       typescript = { 'prettierd' },
