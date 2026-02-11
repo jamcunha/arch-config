@@ -3,7 +3,6 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     { 'mason-org/mason.nvim', opts = {} },
-    'mason-org/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     { 'j-hui/fidget.nvim', opts = {} },
@@ -31,8 +30,6 @@ return {
   },
 
   config = function(_, opts)
-    local lspconfig = require 'lspconfig'
-
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
       callback = function(event)
@@ -147,27 +144,22 @@ return {
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-    require('mason-lspconfig').setup {
-      ensure_installed = {},
-      automatic_installation = false,
-      handlers = {
-        function(server_name)
-          local server_opts = {
-            capabilities = capabilities,
-          }
+    for _, server in ipairs(servers) do
+      local server_opts = {
+        capabilities = capabilities,
+      }
 
-          local ok, settings = pcall(require, 'lspconfig.' .. server_name)
-          if ok then
-            if settings.extra_setup ~= nil then
-              settings.extra_setup()
-            end
-            server_opts = vim.tbl_deep_extend('force', settings.extra_opts, server_opts)
-          end
+      local ok, settings = pcall(require, 'lspconfig.' .. server)
+      if ok then
+        if settings.extra_setup ~= nil then
+          settings.extra_setup()
+        end
+        server_opts = vim.tbl_deep_extend('force', settings.extra_opts, server_opts)
+      end
 
-          lspconfig[server_name].setup(server_opts)
-        end,
-      },
-    }
+      vim.lsp.config(server, server_opts)
+      vim.lsp.enable(server)
+    end
 
     -- for _, server in ipairs(servers) do
     --   if server ~= 'jdtls' then
