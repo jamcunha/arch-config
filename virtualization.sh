@@ -9,3 +9,6 @@ sudo systemctl start libvirtd
 
 # Add user to libvirt group
 sudo usermod -aG libvirt $USER
+
+# Firewall backend to iptables
+sudo echo "firewall_backend=\"iptables\"" >> /etc/libvirt/network.conf

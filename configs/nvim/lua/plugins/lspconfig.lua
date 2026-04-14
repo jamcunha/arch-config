@@ -140,9 +140,16 @@ return {
 
       'prettierd',
       'eslint_d',
+
+      'nixfmt',
     })
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+    -- not in mason
+    vim.list_extend(servers, {
+      'nixd',
+    })
 
     for _, server in ipairs(servers) do
       local server_opts = {

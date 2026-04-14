@@ -43,6 +43,8 @@ return {
       svelte = { 'prettierd' },
       css = { 'prettierd' },
       html = { 'prettierd' },
+
+      nix = { 'nixfmt' },
     },
   },
 }

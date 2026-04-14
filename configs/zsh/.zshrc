@@ -67,8 +67,15 @@ cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(
 eval "$(fzf --zsh)"
 
 # Add paths
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:/opt/rocm/bin"
+export PATH="$PATH:/home/afonso/.opencode/bin"
 
 # Load nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Default editor
+EDITOR="nvim"
