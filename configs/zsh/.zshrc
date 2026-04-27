@@ -77,5 +77,31 @@ export PATH="$PATH:/home/afonso/.opencode/bin"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+# Start ssh agent
+export SSH_ENV="$HOME/.ssh/agent_env"
+
+start_agent() {
+  eval "$(ssh-agent -s)" >/dev/null
+  echo "export SSH_AUTH_SOCK=$SSH_AUTH_SOCK" > "$SSH_ENV"
+  echo "export SSH_AGENT_PID=$SSH_AGENT_PID" >> "$SSH_ENV"
+  chmod 600 "$SSH_ENV"
+}
+
+# Load existing agent
+if [ -f "$SSH_ENV" ]; then
+  source "$SSH_ENV" >/dev/null
+  # If agent is dead, start a new one
+  if ! ps -p "$SSH_AGENT_PID" > /dev/null 2>&1; then
+    start_agent
+  fi
+else
+  start_agent
+fi
+
+# Add key if none loaded
+if ! ssh-add -l >/dev/null 2>&1; then
+  ssh-add ~/.ssh/id_ed25519_homelab >/dev/null 2>&1
+fi
+
 # Default editor
 EDITOR="nvim"
