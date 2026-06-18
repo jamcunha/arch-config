@@ -38,6 +38,9 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# Sort file10 after file9 instead of file1
+setopt numericglobsort
+
 # Auto cd
 setopt auto_cd
 
@@ -101,7 +104,8 @@ fi
 # Add key if none loaded
 if ! ssh-add -l >/dev/null 2>&1; then
   ssh-add ~/.ssh/id_ed25519_homelab >/dev/null 2>&1
+  ssh-add ~/.ssh/id_ed25519_github >/dev/null 2>&1
 fi
 
 # Default editor
-EDITOR="nvim"
+export EDITOR="nvim"
